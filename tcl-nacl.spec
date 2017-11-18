@@ -38,7 +38,7 @@ build higher-level cryptographic tools.
 make 
 
 %install
-make DESTDIR=%{buildroot} pkglibdir=%{directory}/%{_lib}/tcl/%{tarname}%{version} install
+make DESTDIR=%{buildroot} pkglibdir=%{tcl_archdir}/%{tarname}%{version} install
 
 %clean
 rm -rf %buildroot
@@ -46,6 +46,6 @@ rm -rf %buildroot
 %files
 %doc LICENSE.nacl license.terms
 %defattr(-,root,root)
-%{directory}/%{_lib}/tcl
+%{tcl_archdir}
 /usr/share/man/mann
 
