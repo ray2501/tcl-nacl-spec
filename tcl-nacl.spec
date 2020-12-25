@@ -5,12 +5,12 @@
 
 Name:          tcl-nacl
 Summary:       Tcl package for Networking and Cryptography library
-Version:       1.0
+Version:       1.1
 Release:       0
 License:       BSD 3-Clause License
 Group:         Development/Libraries/Tcl
 Source:        %{tarname}-%{version}.tar.bz2
-URL:           https://sourceforge.net/projects/tclsnippets/files/nacl/
+URL:           https://tcl.sowaswie.de/repos/fossil/nacl/home
 BuildRequires: autoconf
 BuildRequires: make
 BuildRequires: tcl-devel >= 8.6
@@ -44,7 +44,7 @@ make DESTDIR=%{buildroot} pkglibdir=%{tcl_archdir}/%{tarname}%{version} install
 rm -rf %buildroot
 
 %files
-%doc LICENSE.nacl license.terms
+%doc LICENSE.nacl LICENSE.terms
 %defattr(-,root,root)
 %{tcl_archdir}
 /usr/share/man/mann

@@ -1,10 +1,19 @@
 #!/usr/bin/tclsh
 
 set arch "x86_64"
-set base "nacl-1.0"
-set fileurl "https://sourceforge.net/projects/tclsnippets/files/nacl/nacl-1.0.tar.bz2"
+set base "nacl-1.1"
+set fileurl "https://tcl.sowaswie.de/repos/fossil/nacl/tarball/6f9011f84c/nacl-6f9011f84c.tar.gz"
 
-set var [list wget $fileurl -O $base.tar.bz2]
+set var [list wget $fileurl -O nacl.tar.gz]
+exec >@stdout 2>@stderr {*}$var
+
+set var [list tar xzvf nacl.tar.gz]
+exec >@stdout 2>@stderr {*}$var
+
+file delete nacl.tar.gz
+file rename nacl-6f9011f84c $base
+
+set var [list tar cjvf $base.tar.bz2 $base]
 exec >@stdout 2>@stderr {*}$var
 
 if {[file exists build]} {
@@ -19,3 +28,4 @@ exec >@stdout 2>@stderr {*}$buildit
 
 # Remove our source code
 file delete $base.tar.bz2
+file delete -force $base
