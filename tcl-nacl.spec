@@ -7,7 +7,7 @@ Name:          tcl-nacl
 Summary:       Tcl package for Networking and Cryptography library
 Version:       1.1
 Release:       0
-License:       BSD 3-Clause License
+License:       BSD-3-Clause
 Group:         Development/Libraries/Tcl
 Source:        %{tarname}-%{version}.tar.bz2
 URL:           https://tcl.sowaswie.de/repos/fossil/nacl/home
